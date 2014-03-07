@@ -1,0 +1,29 @@
+<h1>Listing mircrposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mircrposts.each do |mircrpost| %>
+      <tr>
+        <td><%= mircrpost.content %></td>
+        <td><%= mircrpost.user_id %></td>
+        <td><%= link_to 'Show', mircrpost %></td>
+        <td><%= link_to 'Edit', edit_mircrpost_path(mircrpost) %></td>
+        <td><%= link_to 'Destroy', mircrpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mircrpost', new_mircrpost_path %>
